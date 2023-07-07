@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 /**
- * main - print adding positive numbers.
+ * main - print adding.
  *
  * @argc: The size of the argv array
  * @argv: An array of size argc.

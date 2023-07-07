@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints all arguments it receives.
+ * main - prints all arguments.
  *
  * @argc: The size of the argv array
  * @argv: An array of size argc
