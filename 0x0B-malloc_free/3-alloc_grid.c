@@ -2,21 +2,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * **alloc_grid - function that returns a pointer to a 2 dimensional
- * array of integers.
+ * **alloc_grid - returns a pointer to a 2 dimensional
  *
  * @width: the width
  * @height: the height
+ *
  * Return: pointer of array
  */
 int **alloc_grid(int width, int height)
 {
 	int **ptr, a, b;
-
 	ptr = malloc(sizeof(*ptr) * height);
 	if (width <= 0 || ptr == 0 || height <= 0)
 	{
-		return (NULL);
+		return (0);
 	}
 	else
 	{

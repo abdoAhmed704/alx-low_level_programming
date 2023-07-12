@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 /**
- * git_size - git the length
+ * git_size - the length
  * @s: a string
  * Return: int
  */
@@ -15,7 +15,7 @@ int git_size(char *s)
 	return (n);
 }
 /**
- * *str_concat - a function that concatenates two strings.
+ * *str_concat - concatenates two strings.
  * @s1: a string 1
  * @s2: a string 2
  * Return: a pointer

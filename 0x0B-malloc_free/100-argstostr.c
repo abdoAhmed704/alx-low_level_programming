@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * get_length - finding length of a string
+ * get_length - the length of a string
  * @s: string
  * Return: int
  */
@@ -14,8 +14,7 @@ int get_length(char *s)
 	return (n);
 }
 /**
- * *argstostr - a function that concatenates all the
- * arguments of your program.
+ * *argstostr - concatenates all the
  *
  * @ac: int
  * @av: arguments
@@ -33,7 +32,7 @@ char *argstostr(int ac, char **av)
 		nc += get_length(av[n]);
 	s = malloc(sizeof(char) * nc + 1);
 	if (s == 0)
-		return (NULL);
+		return (0);
 	for (n = 0; n < ac; n++)
 	{
 		for (k = 0; av[n][k] != '\0'; k++, cmpt++)
