@@ -19,5 +19,5 @@ int *array_range(int min, int max)
 		return (NULL);
 	for (k = 0; k < l; k++)
 		m[k] = min++;
-	return (m);
+	 return (m);
 }
