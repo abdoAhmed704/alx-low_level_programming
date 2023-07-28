@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * _strlen - give the lentgh
+ * _strlen - lenght
  * @s: the string whose length to check
  *
  * Return: integer length of string
@@ -19,7 +19,6 @@ int _strlen(char *s)
 
 /**
  * print_list - a function that prints all
- * the elements of a list_t list.
  *
  * @h: pointer to first node
  *

@@ -9,7 +9,6 @@
 void free_list(list_t *head)
 {
 	list_t *node, *next_n;
-
 	if (!head)
 		return;
 
