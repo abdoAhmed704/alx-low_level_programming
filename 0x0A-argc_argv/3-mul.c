@@ -12,7 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-	int arg_1, arg_2;
 	int MAl;
 
 	if (argc != 3)
@@ -21,11 +20,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	arg_1 = atoi(argv[1]);
-	arg_2 = atoi(argv[2]);
-
-	MAl = arg_1 * arg_2;
-
+	MAl = atoi(argv[1]) * atoi(argv[2]);
 	printf("%i\n", MAl);
+
 	return (0);
 }
