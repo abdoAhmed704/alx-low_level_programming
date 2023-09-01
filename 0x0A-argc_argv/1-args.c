@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - print the number of arrc
  *
  * @argc: Number of Arguments
  * @argv: Elements of Arguments
