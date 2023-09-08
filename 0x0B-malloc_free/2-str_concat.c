@@ -45,5 +45,7 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 
+	ptr[index_1 + index_2] = '\0';
+
 	return (ptr);
 }
