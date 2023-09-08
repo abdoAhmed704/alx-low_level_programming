@@ -26,7 +26,7 @@ char *_strdup(char *str)
 	if (ptr == NULL)
 	{
 		printf("Error!!");
-		return NULL;
+		return (NULL);
 	}
 
 	for (index = 0; index < str_Lne; index++)
@@ -34,5 +34,5 @@ char *_strdup(char *str)
 		ptr[index] = str[index];
 	}
 
-	return ptr;
+	return (ptr);
 }
