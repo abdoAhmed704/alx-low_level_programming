@@ -11,11 +11,11 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int len_1 = 0;
-	unsigned int len_2 = 0;
+	long long len_1 = 0;
+	long long len_2 = 0;
 	char *ptr;
-	unsigned int index_1 = 0;
-	unsigned int index_2 = 0;
+	long long index_1 = 0;
+	long long index_2 = 0;
 
 	if (s2 == NULL)
 		s2 = "\0";
