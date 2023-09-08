@@ -16,7 +16,6 @@ char *str_concat(char *s1, char *s2)
 	char *ptr;
 	unsigned int index_1 = 0;
 	unsigned int index_2 = 0;
-	unsigned int index_3 = 0;
 
 	if (s2 == NULL)
 		s2 = "\0";
