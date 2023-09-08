@@ -1,48 +1,49 @@
-#include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-/**
- * git_size - the length
- * @s: a string
- * Return: int
- */
-int git_size(char *s)
-{
-	int n = 0;
 
-	for (; s[n] != '\0'; n++)
-	;
-	return (n);
-}
 /**
- * *str_concat - concatenates two strings.
- * @s1: a string 1
- * @s2: a string 2
- * Return: a pointer
+ * str_concat - Concatenates two strings.
+ * @s1: The first string.
+ * @s2: The second string.
+ *
+ * Return: A pointer to the concatenated string, or NULL if allocation fails.
  */
 char *str_concat(char *s1, char *s2)
 {
-	int n1, n2, i;
-	char *m;
+	unsigned int len_1 = 0;
+	unsigned int len_2 = 0;
+	char *ptr;
+	unsigned int index_1 = 0;
+	unsigned int index_2 = 0;
+	unsigned int index_3 = 0;
 
 	if (s2 == NULL)
 		s2 = "\0";
 	if (s1 == NULL)
 		s1 = "\0";
-	n1 = git_size(s1);
-	n2 = git_size(s2);
-	m = malloc((n1 + n2) * sizeof(char) + 1);
-	if (m == 0)
-		return (0);
-	for (i = 0; i <= (n1 + n2); i++)
+
+	/** Length of the two strings **/
+	while (s1[len_1])
+		len_1++;
+	while (s2[len_2])
+		len_2++;
+
+	/** Allocate the pointer **/
+	ptr = (char *)malloc((len_1 + len_2) * sizeof(char));
+
+	if (ptr == NULL)
 	{
-		if (i < n1)
-		{
-			m[i] = s1[i];
-		}
-		else
-			m[i] = s2[i - n1];
+		return (NULL);
 	}
-	m[i] = '\0';
-	return (m);
+
+	for (index_1 = 0; index_1 < len_1; index_1++)
+	{
+		for (index_2 = len_1; index_2 <= (len_2 + len_1 + 2); index_2++)
+		{
+			ptr[index_1] = s1[index_1];
+			ptr[index_2] = s2[index_2 - index_1 - 1];
+		}
+	}
+
+	return (ptr);
 }
