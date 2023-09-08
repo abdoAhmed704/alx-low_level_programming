@@ -1,26 +1,38 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
+
 /**
- **_strdup - a function that returns a pointer to
- * which contains a copy of the string given as a parameter.
+ * _strdup - Duplicates a string.
+ * @str: The string to duplicate.
  *
- * @str: a string
- *
- * Return: (0)
+ * Return: A pointer to the duplicated string, or NULL if allocation fails.
  */
 char *_strdup(char *str)
 {
-	int k, sizze;
-	char *mallok;
+	int index = 0;
+	int str_Lne = 0;
+	char *ptr;
 
-	if (str == 0)
-		return (0);
-	for (sizze = 0; str[sizze]; sizze++)
-	;
-	mallok = malloc(sizze * sizeof(char) + 1);
-	if (mallok == 0)
-		return (0);
-	for (k = 0; k < sizze; k++)
-		mallok[k] = str[k];
-	return (mallok);
+	if (str == NULL)
+		return (NULL);
+
+	/* Calculate the length of the string */
+	while (str[str_Lne])
+		str_Lne++;
+
+	ptr = (char *)malloc(str_Lne * sizeof(char));
+
+	if (ptr == NULL)
+	{
+		printf("Error!!");
+		return NULL;
+	}
+
+	for (index = 0; index < str_Lne; index++)
+	{
+		ptr[index] = str[index];
+	}
+
+	return ptr;
 }
