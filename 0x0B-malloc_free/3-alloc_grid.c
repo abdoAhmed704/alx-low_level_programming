@@ -24,7 +24,15 @@ int **alloc_grid(int width, int height)
 
 	for (height_index = 0; height_index < height; height_index++)
 	{
-		Ptr[height_index] = (int *)malloc(width * sizeof(unsigned int));
+		Ptr[height_index] = (int *)malloc(width * sizeof(int));
+		if (Ptr[height_index] == NULL)
+		{
+		/**Free previously allocated memory**/
+			for (int i = 0; i < height_index; i++)
+				free(Ptr[i]);
+			free(Ptr);
+			return (NULL);
+		}
 	}
 
 	for (height_index = 0; height_index < height; height_index++)
