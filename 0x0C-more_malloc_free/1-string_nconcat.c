@@ -29,7 +29,8 @@ int Get_length(char *s)
 **/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int len1, len2, i;
+	unsigned int len1, len2, i;
+	char *ptr;
 
 	if (s1 == NULL)
 	{
@@ -46,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n > len2)
 		n = len2;
 
-	char *ptr = malloc((len1 + n + 1) * sizeof(char));
+	ptr = malloc((len1 + n + 1) * sizeof(char));
 
 	if (ptr == NULL)
 		return (NULL);
@@ -57,7 +58,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < n; i++)
 		ptr[i + len1] = s2[i];
 
-	ptr[len1 + n + 1] = '/0';
+	ptr[len1 + n + 1] = '\0';
 
 	return (ptr);
 }
