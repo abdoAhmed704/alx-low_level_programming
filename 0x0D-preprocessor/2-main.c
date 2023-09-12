@@ -1,12 +1,14 @@
 #include <stdio.h>
-
 /**
- * main - a program that print name of of this source file
+ * main - Entry point
  *
- * Return: Always 0.
- */
+ * Return: 0 if suc
+ *
+ *
+**/
 int main(void)
 {
 	printf("%s\n", __FILE__);
+
 	return (0);
 }
