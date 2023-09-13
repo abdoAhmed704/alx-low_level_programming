@@ -1,19 +1,27 @@
+#include <stdio.h>
+#include <string.h>
 #include "dog.h"
+
 /**
- * init_dog - a function that initialize
- * @d: initialized dog
- * @owner: owner's name
- * @name: the dog's name
- * @age: dog's age
+ * init_dog - check the code
  *
- * Return: void.
+ * @d: poiner to struct dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ *
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d != 0)
 	{
-		d->name = name;
+		d->name = malloc(sizeof(name));
+		strcpy(d->name, name);
+
 		d->age = age;
-		d->owner = owner;
+
+		d->owner = malloc(sizeof(owner));
+		strcpy(d->owner, owner);
+
 	}
 }
