@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_node - adding a node at the start
+ * add_node - adds a node to the start of the list
  * @head: address of pointer to head node
  * @str: str field of node
  *
@@ -9,22 +9,33 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new = malloc(sizeof(list_t));
+	list_t *tempNode = NULL;
 
-	if (!head || !new)
-		return (NULL);
-	if (str)
+	if (str != NULL)
 	{
-		new->str = strdup(str);
-		if (!new->str)
+		tempNode = (list_t *)malloc(sizeof(list_t));
+		if (tempNode != NULL)
 		{
-			free(new);
-			return (NULL);
-		}
-		new->len = _strlen(new->str);
-	}
+			tempNode->str = strdup(str);
+			if (*head == NULL)
+			{
+				*head = tempNode;
+			}
+			else
+			{
+				tempNode->next = *head;
+				*head = tempNode;
+			}
 
-	new->next = *head;
-	*head = new;
-	return (new);
+		}
+		else
+		{
+			/*nothing*/
+		}
+	}
+	else
+	{
+		/*nothing*/
+	}
+	return (tempNode);
 }
