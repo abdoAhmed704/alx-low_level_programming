@@ -8,17 +8,16 @@
  */
 void free_list(list_t *head)
 {
-	list_t *node, *next_node;
+	list_t *next_node;
 
 	if (!head)
 		return;
 
-	node = head;
-	while (node)
+	while (head)
 	{
-		next_node = node->next;
-		free(node->str);
-		free(node);
-		node = next_node;
+		next_node = head->next;
+		free(head->str);
+		free(head);
+		head = next_node;
 	}
 }
