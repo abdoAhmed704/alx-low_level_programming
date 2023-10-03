@@ -11,7 +11,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int ptrFile;
-	char Nums[1024 * 8];
+	char Nums[1024 * 7];
 	ssize_t bytes;
 
 	if (filename == NULL || letters == 0)
