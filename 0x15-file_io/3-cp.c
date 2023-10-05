@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "main.h"
 
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
+
 /**
  * main -  copies the content of a file to another file.
  *
@@ -27,7 +29,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
 		exit(98);
 	}
-	fd_2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (fd_2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
