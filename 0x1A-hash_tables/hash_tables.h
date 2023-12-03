@@ -83,19 +83,19 @@ shash_table_t *shash_table_create(unsigned long int size);
 
 shash_node_t *set_spair(const char *key, const char *value);
 
-shash_node_t *set_spair_only(shash_table_t *ht, const char *key,
+shash_node_t *set_sp_only(shash_table_t *ht, const char *key,
 			    const char *value, unsigned long int index);
 
-int update_value(shash_node_t *node, const char *value);
+int update_the_value(shash_node_t *node, const char *value);
 
-shash_node_t *set_spair_front(shash_table_t *ht, const char *key,
+shash_node_t *set_front(shash_table_t *ht, const char *key,
 			     const char *value, unsigned long int index);
 
-int slist_set_first(shash_table_t *ht, shash_node_t *node);
+int slist_first(shash_table_t *ht, shash_node_t *node);
 
 int slist_set(shash_table_t *ht, shash_node_t *old_node, shash_node_t *node);
 
-int slist_set_end(shash_table_t *ht, shash_node_t *node);
+int slist_end(shash_table_t *ht, shash_node_t *node);
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 
