@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_print - Get the value
+ * hash_table_print - prints as a dictionary
  *
  * @ht: the hash table
  *
